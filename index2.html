@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>JSMidi test suite</title>
+
+<script type="text/javascript" src="http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js"></script>
+<script type="text/javascript" src="../midi.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script  src="js/access.js" language="JavaScript" type="text/javascript"></script>
+    <script  src="js/midi.js" language="JavaScript" type="text/javascript"></script>
+    <script  src="js/gen.js" language="JavaScript" type="text/javascript"></script>
+
+</head>
+
+<body class="yui3-skin-sam  yui-skin-sam">
+<div id="testLogger"></div>
+
+<script type="text/javascript">
+YUI().use("console", "test",function (Y) {
+
+    var A = Y.Assert;
+
+    var HDR_CHUNKID     = "MThd";
+    var HDR_CHUNK_SIZE  = "\x00\x00\x00\x06"; // Header size for SMF
+    var HDR_TYPE0       = "\x00\x00"; // Midi Type 0 id
+    var HDR_TYPE1       = "\x00\x01"; // Midi Type 1 id
+    var HDR_SPEED       = "\x00\x80"; // Defaults to 128 ticks per beat
+
+    // Midi event codes
+    var EVT_NOTE_OFF           = 0x8;
+    var EVT_NOTE_ON            = 0x9;
+    var EVT_AFTER_TOUCH        = 0xA;
+    var EVT_CONTROLLER         = 0xB;
+    var EVT_PROGRAM_CHANGE     = 0xC;
+    var EVT_CHANNEL_AFTERTOUCH = 0xD;
+    var EVT_PITCH_BEND         = 0xE;
+
+    Y.namespace("jsmidi.test");
+
+    Y.jsmidi.test.MidiTestCase = new Y.Test.Case({
+
+        name: "Midi Class testcase",
+
+        setUp : function () {
+            this.evt1 = new MidiEvent({
+                    time: 0,
+                    type:    EVT_NOTE_ON,
+                    channel: 0,
+                    param1:  60,
+                    param2:  90
+                });
+            this.evt2 = new MidiEvent({
+                    time:    128,
+                    type:    EVT_NOTE_OFF,
+                    channel: 0,
+                    param1:  60,
+                    param2:  90
+                });
+        },
+        /*
+        testTranslateTickTime: function() {
+            var ttt = translateTickTime;
+
+            A.areEqual(127, ttt(127)[0]);
+
+            var v2 = 255;
+            A.areEqual(0x81, ttt(v2)[0]);
+            A.areEqual(0x7f, ttt(v2)[1]);
+
+            var v3 = 32768;
+            A.areEqual(0x82, ttt(v3)[0]);
+            A.areEqual(0x80, ttt(v3)[1]);
+            A.areEqual(0x00, ttt(v3)[2]);
+
+            },
+        */
+        testMidiWriter: function() {
+            var track = new MidiTrack({ events: [this.evt1, this.evt2] });
+            var midiHex = MidiWriter({ tracks: [track] });
+            //midiHex.save();
+            //a.src = uri//"http://www.a1freesoundeffects.com/popular12008/sword.mp3";
+        }
+    });
+
+    Y.jsmidi.test.EventTestCase = new Y.Test.Case({
+
+        name : "Midi events testcase",
+
+        _should: {
+            error: {
+                testCreateEmpty: "Not enough parameters to create an event."
+            }
+        },
+
+
+        testCreateEmpty : function () {
+            var event = new MidiEvent();
+
+            /*
+            A.isObject(event);
+            A.isInstanceOf(MidiEvent, event);
+            A.isArray(event.timeStamp);
+            A.areEqual(0, event.timeStamp.length);
+            */
+        },
+
+        testCreateWithParams : function () {
+            var event = new MidiEvent({
+                    time:    128,
+                    type:    EVT_NOTE_ON,
+                    channel: 0,
+                    param1:  0x3c,
+                    param2:  90
+                });
+
+            A.isObject(event);
+            A.isInstanceOf(MidiEvent, event);
+            A.areEqual(EVT_NOTE_ON, event.type);
+            A.areEqual(0, event.channel);
+            A.areEqual(0x3c, event.param1);
+            A.areEqual(90, event.param2);
+            A.areEqual([0x81, 0x00, 0x90, 0x3c, 0x5a].toString(), event.toBytes().toString());
+
+            var event2 = new MidiEvent({
+                    time: 127,
+                    type: EVT_NOTE_ON,
+                    channel: 0,
+                    param1: 0x3E,
+                    param2: 0x60
+                    })
+            A.areEqual([0x7f, 0x90, 0x3e, 0x60].toString(), event2.toBytes().toString());
+        },
+
+
+    });
+
+    Y.jsmidi.test.TrackTestCase = new Y.Test.Case({
+
+        name : "Midi track testcase",
+
+        setUp : function () {
+            this.evt1 = new MidiEvent({
+                    time: 0,
+                    type:    EVT_NOTE_ON,
+                    channel: 0,
+                    param1:  60,
+                    param2:  90
+                });
+            this.evt2 = new MidiEvent({
+                    time:    128,
+                    type:    EVT_NOTE_OFF,
+                    channel: 0,
+                    param1:  60,
+                    param2:  90
+                });
+        },
+
+        tearDown: function () {
+            delete this.evt1;
+        },
+
+        testCreateEmpty: function () {
+            var track = new MidiTrack();
+
+            A.isObject(track);
+            A.isInstanceOf(MidiTrack, track);
+            A.isObject(track.events);
+            A.areEqual(0, track.events.length);
+            A.areEqual([0x4d, 0x54, 0x72, 0x6b, 0x00, 0x00, 0x00, 0x4, 0x00, 0xff, 0x2f, 0x00].toString()
+                        ,track.toBytes().toString());
+        },
+        testCreateWithEvents: function() {
+            var track = new MidiTrack({events: [this.evt1, this.evt2] });
+            //A.areEqual("4d54726b0000000f00903c0a8100803c0a00ff2f00", ArrayToHexString(track.toBytes()));
+        }
+    });
+
+    Y.jsmidi.test.RealWorldTestCase = new Y.Test.Case({
+
+        name : "Real Examples testcase",
+
+        testReal1: function() {
+
+            var noteEvents = [];
+            ["C4", "E4", "G4"].forEach(function(note) {
+                Array.prototype.push.apply(noteEvents, MidiEvent.createNote(note));
+            });
+            var track = new MidiTrack({ events: noteEvents });
+            var song  = MidiWriter({ tracks: [track] });
+
+            A.areEqual("TVRoZAAAAAYAAAABAIBNVHJrAAAAHwCQPFqBAIA8WgCQQFqBAIBAWgCQQ1qBAIBDWgD/LwA=", song.b64);
+            // song.play();
+            song.save();
+        }
+    });
+
+    Y.jsmidi.test.Suite = new Y.Test.Suite("JSMidi Suite");
+    Y.jsmidi.test.Suite.add(Y.jsmidi.test.MidiTestCase);
+    Y.jsmidi.test.Suite.add(Y.jsmidi.test.EventTestCase);
+    Y.jsmidi.test.Suite.add(Y.jsmidi.test.TrackTestCase);
+    Y.jsmidi.test.Suite.add(Y.jsmidi.test.RealWorldTestCase);
+
+    var r = new Y.Console({
+        newestOnTop : false,
+        style: 'block'
+    });
+
+    r.render('#testLogger');
+
+    Y.Test.Runner.add(Y.jsmidi.test.Suite);
+    Y.Test.Runner.run();
+});
+</script>
+
+</body>
+</html>
