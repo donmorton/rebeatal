@@ -44,27 +44,16 @@
         </div>
     </nav>
 
-    <!-- Main content -->
-    <div class="view hm-black-light">
-        <div class="full-bg-img flex-center">
-            <ul>
-                <li>
-                    <h1 class="h1-responsive wow fadeInUp title" id='strong'>Ask anything and get a rebuttal of beats!</h1>
-                </li>
-                <li>
-                    <div class="row">
-                        <div class="medium">
-                                <input type="text"><br>
+
+<div>
+  <h1 class="h1-responsive wow fadeInUp title" id='strong'>Ask anything and get a rebuttal of beats!</h1>
+          <input type="text"><br>
                                 <label>Ask here...</label>
-                            </div>
-                            <div class='big'> 
-                        <button class="btn btn-block btn-primary">Songs made by you!</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+
+  <button class="btn btn-block btn-primary">Songs made by you!</button>
+  </div>
+    <!-- Main content -->
+ 
     <!-- WolframAPI response -->
     Result: <a id="response">waiting for WolframAPI...</a>
 
