@@ -54,10 +54,8 @@
                 <li>
                     <div class="row">
                         <div class="medium">
-                            <div class="medium">
                                 <input type="text">
                                 <label>Ask here...</label>
-                            </div>
                         <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
                     </div>
                 </div>
