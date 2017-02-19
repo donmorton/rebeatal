@@ -7,7 +7,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="/public/stylesheets/mdb.min.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
     
@@ -90,10 +90,10 @@
     <script type="text/javascript" src="js/tether.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/public/javascripts/webscript/bootstrap.min.js"></script>
 
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="/public/javascripts/webscript/mdb.min.js"></script>
 
     Result: <a id="response">waiting for WolframAPI...</a>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
