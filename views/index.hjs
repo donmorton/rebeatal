@@ -62,8 +62,6 @@
                     <div class="col-md-3">
                         <div class="md-form">
                             <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
-                        </div>
-                    </div>
                     </div>
                 </li>
             </ul>
