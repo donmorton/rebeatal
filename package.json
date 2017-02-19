@@ -14,6 +14,7 @@
     "hjs": "~0.0.6",
     "http": "0.0.0",
     "morgan": "~1.7.0",
+    "request": "^2.79.0",
     "require": "^2.4.20",
     "serve-favicon": "~2.3.2",
     "socketio": "^1.0.0"
