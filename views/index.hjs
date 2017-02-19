@@ -54,7 +54,7 @@
                 <li>
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="md-form-3">
+                            <div class="blocktext">
                                 <input type="text" id="medium">
                                 <label for="medium">Ask here...</label>
                             </div>
