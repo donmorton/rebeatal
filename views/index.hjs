@@ -3,14 +3,13 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
   </head>
   <body>
     <h1>{{ title }}</h1>
     <p>Welcome to {{ title }}</p>
 
     Result: <a id="response">waiting for WolframAPI...</a>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script>
         var socket = io.connect(window.location.host);
         var query = "How far from new york to los angeles";
