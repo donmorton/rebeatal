@@ -28,7 +28,9 @@
 	width: 400px;
 }
 .big{
-	margin: 0 auto;
+	bottom: -10em;
+	margin-left: auto;
+	margin-right: auto;
 	width: 650px; length: 65;
 }
 input[type="text"]:focus:not([readonly]) {

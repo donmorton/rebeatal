@@ -56,9 +56,9 @@
                         <div class="medium">
                                 <input type="text"><br>
                                 <label>Ask here...</label>
-                        </div>
-                        <div class='big'> 
-                            <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
+                            </div>
+                            <div class='big'> 
+                        <button class="btn btn-block btn-primary">Songs made by you!</button>
                         </div>
                     </div>
                 </li>
