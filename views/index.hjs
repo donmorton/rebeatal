@@ -49,7 +49,7 @@
         <div class="full-bg-img flex-center">
             <ul>
                 <li>
-                    <h1 class="h1-responsive wow fadeInUp title" id='strong'>Ask anything and get an answer in song</h1>
+                    <h1 class="h1-responsive wow fadeInUp title" id='strong'>Ask anything and get a rebuttal of beats!</h1>
                 </li>
                 <li>
                     <div class="row">
@@ -66,8 +66,7 @@
                 </div>
             </div>
         </li>
-    </ul>        
-</div>
+    </ul>
     <!-- WolframAPI response -->
     Result: <a id="response">waiting for WolframAPI...</a>
 
