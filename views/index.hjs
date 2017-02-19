@@ -18,7 +18,7 @@
         }
     </style>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='public/stylesheets/style.css' />
+    <link rel='stylesheet' href='../public/stylesheets/style.css' />
   </head>
   <body>
           <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
