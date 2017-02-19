@@ -48,26 +48,13 @@
     <!-- Main content -->
     <div class="view hm-black-light">
         <div class="full-bg-img flex-center">
-            <ul>
-                <li>
+
                     <h1 class="h1-responsive wow fadeInUp title"><span id='strong'>Ask</span> anything and get an answer in song</h1>
-                </li>
-                <li>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="md-form">
+            
                                 <input type="text" id="medium">
                                 <label for="medium">Ask here...</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="md-form">
-                            <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                                                   <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
+               
         </div>
     </div>
 
