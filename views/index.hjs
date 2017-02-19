@@ -52,7 +52,8 @@
                     <h1 class="h1-responsive wow fadeInUp title" id='strong'>Ask anything and get an answer in song</h1>
                 </li>
                 <li>
-                    <div class="medium">
+                    <div class="row">
+                        <div class="medium">
                             <div class="medium">
                                 <input type="text"><br>
                                 <label id='fix'>Ask here...</label>
@@ -62,6 +63,7 @@
                         <div class="md-form">
                             <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
                         </div>
+                    </div>
                     </div>
                 </li>
             </ul>
