@@ -59,7 +59,7 @@
                                 <label>Ask here...</label>
                             </div>
                         </div>
-                    <div class="col-md-3">
+                    <div class="medium">
                         <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
                     </div>
                 </div>
