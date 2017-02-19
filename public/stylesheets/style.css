@@ -22,7 +22,8 @@
 }
 #medium{
 	display:inline-block;
-	width: 600px; length: 60;
+	margin: 20px;
+	width: 500px;
 }
 #big{
 	margin: 60px;
