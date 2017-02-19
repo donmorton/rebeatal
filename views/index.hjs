@@ -49,14 +49,21 @@
         <div class="full-bg-img flex-center">
             <ul>
                 <li>
-                    <h1 class="h1-responsive wow fadeInUp title"><span id='strong'>Ask</span> anything and get an answer in song</h1>
+                    <h1 class="h1-responsive wow fadeInUp title" id='strong'>Ask anything and get an answer in song</h1>
                 </li>
                 <li>
                     <div class="row">
+<<<<<<< HEAD
                         <div class="medium">
                             <div class="medium">
                                 <input type="text"><br>
                                 <label>Ask here...</label>
+=======
+                        <div class="col-md-3">
+                            <div class="md-form-3">
+                                <input type="text" id="medium"><br>
+                                <label for="medium">Ask here...</label>
+>>>>>>> parent of 5cd1803... Revert "we'll see"
                             </div>
                         </div>
                     </div>
