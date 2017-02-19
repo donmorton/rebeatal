@@ -1,46 +1,25 @@
-/* YOUR CUSTOM STYLES */
+/* CUSTOM STYLES */
 
-.view {
-	background: url("https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg")no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	height: 100vh;
-}
-.navbar-default .navbar-fnt {
-	color: #5CB85C;
-}
-.full-bg-img {
-	color: #fff;
+.splash {
+    padding: 9em 0 2em;
+    background-color: #141d27;
+    background-image: url("https://bootswatch.com/assets/img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
 }
 
-.title {
-	font-weight:bold;
-	color: #FFF; 
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.medium{
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: auto;
-	width: 400px;
-}
-.big{
-	padding: 50px;
-	width: 650px; length: 65;
-}
-input[type="text"]:focus:not([readonly]) {
-	border-color:#C00;
-	box-shadow:0 1px 0 0 #C00;
-	color:#fff;
+.splash h1 {
+	font-size: 3em;
 }
 
-input[type="text"]:not([readonly])+label {
-	color:rgba(255,255,255,.65);
+.navbar-brand>img {
+    display: inline;
+    margin: 0 10px;
+    height: 100%;
 }
 
-input[type="text"]:focus:not([readonly])+label {
-	color:#fff;
+.navbar-transparent {
+   background: rgba(0,0,0,0);
 }
