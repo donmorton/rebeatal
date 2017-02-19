@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var gen = require('./public/javascripts/gen.js');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var request = require('request');
 
 var app = express();
 
