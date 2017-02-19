@@ -6,6 +6,7 @@
     <link href="stylesheets/mdb.min.css" rel="stylesheet">
     <link href="stylesheets/style.css" rel="stylesheet">
     <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/bootstrap.min" rel="stylesheet">
     <style rel="stylesheet">
         .nopadding {
             margin-top: 0 !important;
