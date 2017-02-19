@@ -27,9 +27,8 @@
 	margin-bottom: auto;
 	width: 400px;
 }
-#big{
-	margin-left: auto;
-	margin-right:auto;
+.big{
+	margin: 0 auto;
 	width: 650px; length: 65;
 }
 input[type="text"]:focus:not([readonly]) {
