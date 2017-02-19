@@ -53,7 +53,7 @@
                 </li>
                 <li>
                     <div class="row">
-                        <div class="medium">
+                        <div class="md-form">
                             <div class="medium">
                                 <input type="text">
                                 <label>Ask here...</label>
