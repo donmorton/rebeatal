@@ -57,13 +57,7 @@
                             <div class="medium">
                                 <input type="text"><br>
                                 <label>Ask here...</label>
-                        <div class="col-md-3">
-                            <div class="md-form-3">
-                                <input type="text" id="medium"><br>
-                                <label for="medium">Ask here...</label>
                             </div>
-                        </div>
-                    </div>
                     <div class="col-md-3">
                         <div class="md-form">
                             <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
