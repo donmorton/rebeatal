@@ -53,10 +53,10 @@
                 </li>
                 <li>
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="col-md-10">
-                                <input type="text" id="medium">
-                                <label for="medium">Ask here...</label>
+                        <div class="medium">
+                            <div class="medium">
+                                <input type="text">
+                                <label>Ask here...</label>
                             </div>
                         </div>
                     </div>
