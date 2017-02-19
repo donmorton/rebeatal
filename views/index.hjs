@@ -57,11 +57,12 @@
                                 <input type="text">
                                 <label>Ask here...</label>
                         <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </li>
-    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
     <!-- WolframAPI response -->
     Result: <a id="response">waiting for WolframAPI...</a>
 
