@@ -123,22 +123,31 @@ var srv = function(input) {
     var keys = []; //array of keys
     var notes = []; //array of random keys
 
-    for (var key in dictionary) {
-        if (dictionary.hasOwnProperty(key)) {
+    for (var key in noteTable) {
+        if (noteTable.hasOwnProperty(key)) {
             keys.push(key);
+        }
+        }
 
-            for (var i = 0; i < 10; i++) {
+    got = Number(input);
+    while(nums.length!=10){
                 generated = Math.random() * Number(input);
                 if (generated < 116 && generated > 0) {
                     nums.push(generated);
                 }
+        else
+            got=got/5;
             }
+        
+
+    alert(keys.length);
+    alert(nums);
 
 
             for (var y = 0; y < nums.length; i++) {
                 notes[y] = keys[nums[y]];
             }
-
+            alert("HHH");
             var noteEvents = [];
             notes.forEach(function(note) {
                 Array.prototype.push.apply(noteEvents, MidiEvent.createNote(note));
@@ -152,13 +161,14 @@ var srv = function(input) {
             song.save();
 
 
-        }
-    }
+        
+    
 }
 
 var gen = function(input) {
+alert(input);
     for (x = 0; x < 10; x++) {
-        svr(input);
+        srv(input);
     }
 }
 
