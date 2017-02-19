@@ -12,7 +12,7 @@
     Result: <a id="response">waiting for WolframAPI...</a>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        var socket = io();
+        var socket = io.connect(window.location.host);
         var query = "How far from new york to los angeles";
 
         socket.on('message', function(msg) {
