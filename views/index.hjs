@@ -1,70 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
+<head>
     <!-- Material Design Bootstrap -->
-    <link href="/public/stylesheets/mdb.min.css" rel="stylesheet">
-
-    <link href="/public/stylesheets/style.css" rel="stylesheet">
-    
-    <!-- JQuery -->
-    <script type="text/javascript" src="/public/javascripts/webscript/jquery-2.2.3.min.js"></script>
-
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="/public/javascripts/webscript/tether.min.js"></script>
-
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="/public/javascripts/webscript/bootstrap.min.js"></script>
-
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="/public/javascripts/webscript/mdb.min.js"></script>
-
+    <link href="stylesheets/mdb.min.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
     <style rel="stylesheet">
-
-        /* TEMPLATE STYLES */
         .nopadding {
             margin-top: 0 !important;
         }
     </style>
+
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='../public/stylesheets/style.css' />
-  </head>
-  <body>
-          <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
-            <div class="container">
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <strong>ReBeatal</strong>
-                </a>
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">About us</a>
-                        </li>
-                    </ul>
-                    
-                    <!--Navbar icons-->
-                    <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!--/.Navbar-->
+</head>
 
-    </header>
-    <!--/Navigation & Intro-->
+<body>
 
-    <!--Mask-->
+    <!-- Navbar -->
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <strong>ReBeatal</strong>
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">About us</a>
+                </li>
+            </ul>
+
+            <!--Navbar icons-->
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content -->
     <div class="view hm-black-light">
         <div class="full-bg-img flex-center">
             <ul>
                 <li>
-                    <h1 class="h1-responsive wow fadeInUp title"><span id='strong'>Ask</span> anything and get an answer in song</h1></li>
+                    <h1 class="h1-responsive wow fadeInUp title"><span id='strong'>Ask</span> anything and get an answer in song</h1>
+                </li>
                 <li>
                     <div class="row">
                         <div class="col-md-4">
@@ -73,28 +56,34 @@
                                 <label for="medium">Ask here...</label>
                             </div>
                         </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="md-form">
-                                <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
-                            </div> 
+                    </div>
+                    <div class="col-md-3">
+                        <div class="md-form">
+                            <button class="btn btn-block btn-primary" id="big">Songs made by you!</button>
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
-    <!--/.Mask-->
-    
-    <!--Footer-->
 
-    <!--/.Footer-->
-
-    <!-- SCRIPTS -->
-
-    
-
+    <!-- WolframAPI response -->
     Result: <a id="response">waiting for WolframAPI...</a>
+
+    <!--Footer (To-do) -->
+
+
+
+    <!-- Javascripts (Always load JS at the end of the page) -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="javascripts/webscript/jquery-2.2.3.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="javascripts/webscript/tether.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="javascripts/webscript/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="javascripts/webscript/mdb.min.js"></script>
+    <!-- Socket.io -->
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script>
         var socket = io.connect();
@@ -106,8 +95,6 @@
 
         socket.emit('query', query);
     </script>
+</body>
 
- 
-
- </body>
 </html>
