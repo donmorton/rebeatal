@@ -144,10 +144,10 @@ var srv = function(input) {
     alert(nums);
 
 
-            for (var y = 0; y < nums.length; i++) {
-                notes[y] = keys[nums[y]];
+            for (var y = 0; y < nums.length; y++) {
+                notes[y] = keys[parseInt(nums[y])];
             }
-            alert("HHH");
+            alert(notes);
             var noteEvents = [];
             notes.forEach(function(note) {
                 Array.prototype.push.apply(noteEvents, MidiEvent.createNote(note));
@@ -166,10 +166,14 @@ var srv = function(input) {
 }
 
 var gen = function(input) {
+if(input!=""){
 alert(input);
     for (x = 0; x < 10; x++) {
         srv(input);
     }
+}
+else
+{alert("Error: Blank input");}
 }
 
 module.exports = gen;
