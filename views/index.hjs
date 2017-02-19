@@ -19,6 +19,7 @@
             document.getElementById('response').innerHTML = msg.stuff;
         });
 
+query
         socket.emit('search', query);
     </script>
  
