@@ -62,7 +62,6 @@
             </div>
         </li>
     </ul>
-    </div>
     <!-- WolframAPI response -->
     Result: <a id="response">waiting for WolframAPI...</a>
 
