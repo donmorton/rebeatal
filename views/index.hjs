@@ -53,17 +53,14 @@
                 </li>
                 <li>
                     <div class="row">
-<<<<<<< HEAD
                         <div class="medium">
                             <div class="medium">
                                 <input type="text"><br>
                                 <label>Ask here...</label>
-=======
                         <div class="col-md-3">
                             <div class="md-form-3">
                                 <input type="text" id="medium"><br>
                                 <label for="medium">Ask here...</label>
->>>>>>> parent of 5cd1803... Revert "we'll see"
                             </div>
                         </div>
                     </div>
