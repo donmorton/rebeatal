@@ -20,15 +20,21 @@
 	color: #FFF; 
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+<<<<<<< HEAD
 
 #fix{
 	top:10em;
 	margin-bottom: auto;
 }
 .medium{
+=======
+#medium{
+>>>>>>> parent of ee1175d... final fix?
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: auto;
+	top: 3em;
 	width: 400px;
 }
 #big{

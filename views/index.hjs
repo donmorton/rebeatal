@@ -56,7 +56,7 @@
                         <div class="medium">
                             <div class="medium">
                                 <input type="text"><br>
-                                <label id='fix'>Ask here...</label>
+                                <label>Ask here...</label>
                             </div>
                         </div>
                     <div class="col-md-3">
