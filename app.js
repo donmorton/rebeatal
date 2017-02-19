@@ -12,8 +12,11 @@ var request = require('request');
 var app = express();
 
 var http = require('http').createServer(app);
-var io = require('socket.io')(http);
 var fs = require('fs');
+var socketio = require('socket.io');
+var request = require('request');
+var io = socketio();
+app.io = io;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -76,8 +79,5 @@ function wolframQuery(query, socket) {
     request(options, callback);
 }
 
-http.listen(3000, function() {
-    console.log('listening on *:3000');
-});
 
 module.exports = app;
