@@ -2,7 +2,7 @@
  * VARIABLES, BABY!
  */
 var socket = io.connect(); // Our dearest socket
-var TIMEOUT = 6 // How long to wait for a server response before giving up
+var TIMEOUT = 7 // How long to wait for a server response before giving up
 var THINKING = false; // Is ReBeatal processing a request right now?
 var TEXTBOX = document.getElementById('ask'); // The question textbox
 
