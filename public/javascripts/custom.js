@@ -2,7 +2,7 @@
  * VARIABLES, BABY!
  */
 var socket = io.connect(); // Our dearest socket
-var TIMEOUT = 4 // How long to wait for a server response before giving up
+var TIMEOUT = 6 // How long to wait for a server response before giving up
 var THINKING = false; // Is ReBeatal processing a request right now?
 var TEXTBOX = document.getElementById('ask'); // The question textbox
 
@@ -47,12 +47,17 @@ function queryServer(q) {
         console.log(msg.audioURL);
 
         TEXTBOX.disabled = false;
-        TEXTBOX.value = q;
         TEXTBOX.focus();
 
         if (THINKING) {
           playSound(msg.audioURL);
           document.getElementById('overwrite').innerHTML = '<p class="lead">' + msg.stuff + '</p>';
+        }
+
+        if (!msg.success) {
+          TEXTBOX.value = "";
+        } else {
+          TEXTBOX.value = q;
         }
 
 
@@ -68,7 +73,7 @@ function queryServer(q) {
             TEXTBOX.value = "";
             TEXTBOX.focus();
 
-            alert("Hey buddy, how about you ask me a question that actually makes sense.");
+            alert("The server appears to have cancer. ReBeatal the bot may have escaped his confines, the world is at risk.");
 
             // Keep this variable assignment at the bootom
             THINKING = false;
